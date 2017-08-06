@@ -42,7 +42,7 @@ if has('gui_running')
  set guioptions-=T " remove toolbar
  set guioptions-=r " remove right-hand scroll bar
  set guioptions-=L " remove left-hand scroll bar
- set guifont=PragmataPro\ Mono\ 11
+ set guifont=PragmataPro\ Mono\ 14
 endif
 
 " {W} -> [É]
@@ -126,3 +126,7 @@ noremap wo <C-w>s
 noremap wp <C-w>o
 noremap w<SPACE> :split<CR>
 noremap w<CR> :vsplit<CR>
+
+" Remapping <esc> in insert mode because it's really not practical on those touch bar macbook
+" pro. It will only work on GUI vim.
+inoremap <Tab> <esc>
