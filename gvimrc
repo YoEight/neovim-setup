@@ -1,1 +1,1 @@
-set guifont=PragmataPro\ Mono :h14
+set guifont=PragmataPro\ Mono:h14
