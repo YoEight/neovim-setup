@@ -33,11 +33,13 @@ set t_Co=256
 set cmdheight=1
 
 set termguicolors
+set background=dark
 
 execute pathogen#infect()
 
+colorscheme gruvbox
+
 if has('gui_running')
- colorscheme parsec
  set guioptions-=m " remove menu bar
  set guioptions-=T " remove toolbar
  set guioptions-=r " remove right-hand scroll bar
