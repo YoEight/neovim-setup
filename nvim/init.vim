@@ -1,8 +1,8 @@
 syntax on
 filetype plugin indent on
 
-set directory=~/.vim/backup
-set backupdir=~/.vim/backup
+set directory=~/.config/nvim/backup
+set backupdir=~/.config/nvim/backup
 
 set nocompatible
 set number
@@ -19,7 +19,7 @@ set expandtab
 set incsearch
 set mouse=a
 set history=1000
-set clipboard=unnamedplus,autoselect
+" set clipboard=unnamedplus,autoselect -- apparently, not working on neovim
 
 set completeopt=menuone,menu,longest
 
@@ -42,7 +42,7 @@ if has('gui_running')
  set guioptions-=T " remove toolbar
  set guioptions-=r " remove right-hand scroll bar
  set guioptions-=L " remove left-hand scroll bar
- set guifont=PragmataPro\ Mono\ 14
+ " set guifont=PragmataPro\ Mono\ 14 -- It seems it doesn't work in OSX
 endif
 
 " {W} -> [É]
@@ -130,3 +130,10 @@ noremap w<CR> :vsplit<CR>
 " Remapping <esc> in insert mode because it's really not practical on those touch bar macbook
 " pro. It will only work on GUI vim.
 inoremap <Tab> <esc>
+
+" Useful remapping for third-party plugin.
+noremap ,n :NERDTreeToggle<CR>
+
+" snipMate remapping.
+:imap <C-e> <Plug>snipMateNextOrTrigger
+
