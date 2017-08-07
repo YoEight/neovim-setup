@@ -1,18 +1,21 @@
 [submodule "bundle/nerdtree"]
-	path = vim/bundle/nerdtree
+	path = nvim/bundle/nerdtree
 	url = https://github.com/scrooloose/nerdtree.git
 [submodule "bundle/vim-better-whitespace"]
-	path = vim/bundle/vim-better-whitespace
+	path = nvim/bundle/vim-better-whitespace
 	url = git://github.com/ntpeters/vim-better-whitespace.git
 [submodule "vim/bundle/parsec.vim"]
-	path = vim/bundle/parsec.vim
+	path = nvim/bundle/parsec.vim
 	url = https://github.com/Keithbsmiley/parsec.vim.git
 [submodule "vim/bundle/vim-snipmate"]
-	path = vim/bundle/vim-snipmate
+	path = nvim/bundle/vim-snipmate
 	url = https://github.com/garbas/vim-snipmate.git
 [submodule "vim/bundle/tlib_vim"]
-	path = vim/bundle/tlib_vim
+	path = nvim/bundle/tlib_vim
 	url = https://github.com/tomtom/tlib_vim.git
 [submodule "vim/bundle/vim-addon-mw-utils"]
-	path = vim/bundle/vim-addon-mw-utils
+	path = nvim/bundle/vim-addon-mw-utils
 	url = https://github.com/MarcWeber/vim-addon-mw-utils.git
+[submodule "vim/bundle/gruvbox"]
+	path = nvim/bundle/gruvbox
+	url = https://github.com/morhetz/gruvbox.git
