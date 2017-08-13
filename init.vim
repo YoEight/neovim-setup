@@ -47,6 +47,9 @@ if has('gui_running')
  " set guifont=PragmataPro\ Mono\ 14 -- It seems it doesn't work in OSX
 endif
 
+" NERDTree settings.
+let NERDTreeShowHidden=1
+
 " {W} -> [É]
 " ——————————
 " On remappe W sur É :
