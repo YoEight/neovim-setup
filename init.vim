@@ -8,6 +8,7 @@ set nocompatible
 set number
 set nowrap
 set showmode
+set showmatch
 set tw=80
 set smartcase
 set smarttab
@@ -19,6 +20,7 @@ set expandtab
 set incsearch
 set mouse=a
 set history=1000
+set ruler
 " set clipboard=unnamedplus,autoselect -- apparently, not working on neovim
 
 set completeopt=menuone,menu,longest
@@ -33,10 +35,15 @@ set t_Co=256
 set cmdheight=1
 
 set termguicolors
-set background=dark
 
 execute pathogen#infect()
 
+" gruvbox configuration
+let g:gruvbox_italic = 1
+let g:gruvbox_hls_cursor = 'purple'
+let g:gruvbox_italicize_comments = 1
+let g:gruvbox_italicize_strings = 1
+set background=dark
 colorscheme gruvbox
 
 if has('gui_running')
@@ -152,4 +159,8 @@ noremap ,n :NERDTreeToggle<CR>
 
 " snipMate remapping.
 :imap <C-e> <Plug>snipMateNextOrTrigger
+
+" CtrlP remapping
+noremap ,f :CtrlP<CR>
+noremap ,t :CtrlPTag<CR>
 
