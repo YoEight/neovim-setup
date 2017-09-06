@@ -9,7 +9,7 @@ set number
 set nowrap
 set showmode
 set showmatch
-set tw=80
+" set tw=80
 set smartcase
 set smarttab
 set smartindent
@@ -21,7 +21,7 @@ set incsearch
 set mouse=a
 set history=1000
 set ruler
-" set clipboard=unnamedplus,autoselect -- apparently, not working on neovim
+set clipboard+=unnamedplus
 
 set completeopt=menuone,menu,longest
 
