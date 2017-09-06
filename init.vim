@@ -25,7 +25,7 @@ set clipboard+=unnamedplus
 
 set completeopt=menuone,menu,longest
 
-set wildignore+=*\\tmp\\*,*.swp,*.swo,*.zip,.git,.cabal-sandbox
+set wildignore+=*\\tmp\\*,*.swp,*.swo,*.zip,.git,.cabal-sandbox,.stack-work
 set wildmode=longest,list,full
 set wildmenu
 set completeopt+=longest
@@ -38,13 +38,18 @@ set termguicolors
 
 execute pathogen#infect()
 
+" quantum configuration
+let g:quantum_italics=1
+let g:airline_theme='quantum'
+
 " gruvbox configuration
 let g:gruvbox_italic = 1
 let g:gruvbox_hls_cursor = 'purple'
 let g:gruvbox_italicize_comments = 1
 let g:gruvbox_italicize_strings = 1
+
 set background=dark
-colorscheme gruvbox
+colorscheme quantum
 
 if has('gui_running')
  set guioptions-=m " remove menu bar
