@@ -34,3 +34,9 @@
 [submodule "bundle/indentLine"]
 	path = bundle/indentLine
 	url = https://github.com/Yggdroot/indentLine.git
+[submodule "bundle/vim-one"]
+	path = bundle/vim-one
+	url = https://github.com/rakr/vim-one.git
+[submodule "bundle/vim-quantum"]
+	path = bundle/vim-quantum
+	url = https://github.com/tyrannicaltoucan/vim-quantum.git
