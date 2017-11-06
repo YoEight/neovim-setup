@@ -40,6 +40,7 @@ execute pathogen#infect()
 
 " quantum configuration
 let g:quantum_italics=1
+let g:quantum_black=1
 let g:airline_theme='quantum'
 
 " gruvbox configuration
