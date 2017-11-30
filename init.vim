@@ -22,6 +22,7 @@ set mouse=a
 set history=1000
 set ruler
 set clipboard+=unnamedplus
+set encoding=utf8
 
 set completeopt=menuone,menu,longest
 
@@ -38,9 +39,10 @@ set termguicolors
 
 execute pathogen#infect()
 
+let g:airline_powerline_fonts = 1
 " quantum configuration
 let g:quantum_italics=1
-let g:quantum_black=1
+" let g:quantum_black=1
 let g:airline_theme='quantum'
 
 " gruvbox configuration
