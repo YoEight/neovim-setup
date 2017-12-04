@@ -1,10 +1,40 @@
+set nocompatible
+filetype off
+
+if empty(glob('~/.config/nvim/autoload/plug.vim'))
+  silent !curl -fLo ~/.config/nvim/autoload/plug.vim --create-dirs
+    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+endif
+
+call plug#begin('~/.config/nvim/plugged')
+
+Plug 'ctrlpvim/ctrlp.vim'
+Plug 'neovimhaskell/haskell-vim'
+Plug 'rust-lang/rust.vim'
+Plug 'plasticboy/vim-markdown'
+Plug 'cespare/vim-toml'
+Plug 'scrooloose/nerdtree'
+Plug 'vim-airline/vim-airline'
+Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
+Plug 'tyrannicaltoucan/vim-quantum'
+Plug 'Xuyuanp/nerdtree-git-plugin'
+Plug 'ryanoasis/vim-devicons'
+Plug 'MarcWeber/vim-addon-mw-utils'
+Plug 'garbas/vim-snipmate'
+Plug 'ntpeters/vim-better-whitespace'
+
+call plug#end()
+
 syntax on
 filetype plugin indent on
+
+set encoding=utf8
+scriptencoding utf-8
 
 set directory=~/.config/nvim/backup
 set backupdir=~/.config/nvim/backup
 
-set nocompatible
 set number
 set nowrap
 set showmode
@@ -16,35 +46,28 @@ set smartindent
 set autoindent
 set softtabstop=2
 set shiftwidth=2
+set laststatus=2
 set expandtab
 set incsearch
 set mouse=a
 set history=1000
 set ruler
 set clipboard+=unnamedplus
-set encoding=utf8
-
 set completeopt=menuone,menu,longest
-
 set wildignore+=*\\tmp\\*,*.swp,*.swo,*.zip,.git,.cabal-sandbox,.stack-work
 set wildmode=longest,list,full
 set wildmenu
 set completeopt+=longest
-
 set t_Co=256
-
 set cmdheight=1
-
 set termguicolors
-set list
+set background=dark
 
-execute pathogen#infect()
-
-let g:airline_powerline_fonts = 1
 " quantum configuration
 let g:quantum_italics=1
 " let g:quantum_black=1
 let g:airline_theme='quantum'
+let g:airline_powerline_fonts = 1
 
 " gruvbox configuration
 let g:gruvbox_italic = 1
@@ -52,16 +75,7 @@ let g:gruvbox_hls_cursor = 'purple'
 let g:gruvbox_italicize_comments = 1
 let g:gruvbox_italicize_strings = 1
 
-set background=dark
 colorscheme quantum
-
-if has('gui_running')
- set guioptions-=m " remove menu bar
- set guioptions-=T " remove toolbar
- set guioptions-=r " remove right-hand scroll bar
- set guioptions-=L " remove left-hand scroll bar
- " set guifont=PragmataPro\ Mono\ 14 -- It seems it doesn't work in OSX
-endif
 
 " NERDTree settings.
 let NERDTreeShowHidden=1
