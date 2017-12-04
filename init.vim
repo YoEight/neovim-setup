@@ -36,6 +36,7 @@ set t_Co=256
 set cmdheight=1
 
 set termguicolors
+set list
 
 execute pathogen#infect()
 
