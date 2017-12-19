@@ -66,10 +66,10 @@ set background=dark
 
 " quantum configuration
 let g:quantum_italics=1
-" let g:quantum_black=1
+let g:quantum_black=1
 let g:airline_theme='quantum'
 let g:airline_powerline_fonts = 1
-let g:airline#extensions#tabline#enabled = 1
+" let g:airline#extensions#tabline#enabled = 1
 
 " gruvbox configuration
 let g:gruvbox_italic = 1
