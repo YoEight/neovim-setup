@@ -38,7 +38,7 @@ set backupdir=~/.config/nvim/backup
 
 set number
 set nowrap
-set showmode
+set noshowmode
 set showmatch
 " set tw=80
 set smartcase
