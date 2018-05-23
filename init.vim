@@ -10,18 +10,23 @@ endif
 call plug#begin('~/.config/nvim/plugged')
 
 Plug '/usr/local/opt/fzf'
-Plug 'ctrlpvim/ctrlp.vim'
-Plug 'phaazon/gruvbox'
+Plug 'YoEight/fzf.vim'
+"Plug 'ctrlpvim/ctrlp.vim'
+Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-vinegar'
+Plug 'YoEight/gruvbox'
+Plug 'YoEight/vim-one'
+" Plug 'jiangmiao/auto-pairs'
 " Plug 'shinchu/lightline-gruvbox.vim'
-Plug 'neovimhaskell/haskell-vim'
+Plug 'YoEight/haskell-vim'
 Plug 'rust-lang/rust.vim'
 Plug 'plasticboy/vim-markdown'
 Plug 'cespare/vim-toml'
 Plug 'tomtom/tlib_vim'
-Plug 'scrooloose/nerdtree'
+" Plug 'scrooloose/nerdtree'
 " Plug 'itchyny/lightline.vim'
 Plug 'vim-airline/vim-airline'
-Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
+" Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 Plug 'tyrannicaltoucan/vim-quantum'
 Plug 'joshdick/onedark.vim'
 " Plug 'Xuyuanp/nerdtree-git-plugin'
@@ -74,19 +79,21 @@ set completeopt+=longest
 set t_Co=256
 set cmdheight=1
 set termguicolors
-set background=dark
+set background=light
 set rtp+=/usr/local/opt/fzf
 set cursorline
+" Required for operations modifying multiple buffers like rename.
+set hidden
 
 " let g:ctrlp_custom_ignore = {
 "   \ 'dir':  '\v[\/]\.(git|hg|svn)$',
 "   \ 'file': '\v\.(exe|so|dll)$'
 "   \ }
 " quantum configuration
-let g:quantum_italics=1
+" let g:quantum_italics=1
 " let g:quantum_black=1
-let g:airline_theme='quantum'
-" let g:airline_powerline_fonts = 1
+let g:airline_theme='one'
+let g:airline_powerline_fonts = 1
 " let g:airline#extensions#tabline#enabled = 1
 
 " let g:lightline = {
@@ -99,7 +106,9 @@ let g:gruvbox_hls_cursor = 'purple'
 let g:gruvbox_italicize_comments = 1
 let g:gruvbox_italicize_strings = 1
 
-colorscheme quantum
+"let g:airline_symbols.space = "\ua0"
+let g:one_allow_italics = 1
+colorscheme one " gruvbox
 
 " Markdown configuration
 let g:vim_markdown_folding_disabled = 1
@@ -118,15 +127,30 @@ let g:haskell_backpack = 1                " to enable highlighting of backpack k
 let g:haskell_indent_case = 4
 let g:haskell_indent_disable = 1
 
+let g:LanguageClient_serverCommands = {
+    \ 'rust': ['rustup', 'run', 'nightly', 'rls'],
+    \ 'javascript': ['javascript-typescript-stdio'],
+    \ 'javascript.jsx': ['tcp://127.0.0.1:2089'],
+    \ }
 " Useful remapping for third-party plugin.
-noremap ,n :NERDTreeToggle<CR>
+" noremap ,n :NERDTreeToggle<CR>
+
+" autocmd BufRead *.rs :setlocal tags=./rusty-tags.vi;/,$RUST_SRC_PATH/rusty-tags.vi
+" autocmd BufWritePost *.rs :silent! exec "!rusty-tags vi --quiet --start-dir=" . expand('%:p:h') . "&" | redraw!
 
 " snipMate remapping.
 :imap <C-e> <Plug>snipMateNextOrTrigger
 
 " CtrlP remapping
-noremap ,f :FZF<CR>
-noremap ,t :CtrlPTag<CR>
+noremap ,b :Buffers<CR>
+noremap ,f :GFiles<CR>
+noremap ,gf :Files<CR>
+noremap ,gd :GFiles?<CR>
+noremap ,t :Tags<CR>
+
+nnoremap <silent> K :call LanguageClient#textDocument_hover()<CR>
+nnoremap <silent> gd :call LanguageClient#textDocument_definition()<CR>
+nnoremap <silent> <F2> :call LanguageClient#textDocument_rename()<CR>
 
 " Remapping <esc> in insert mode because it's really not practical on those touch bar macbook
 " pro.
