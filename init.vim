@@ -79,7 +79,7 @@ set completeopt+=longest
 set t_Co=256
 set cmdheight=1
 set termguicolors
-set background=light
+set background=dark
 set rtp+=/usr/local/opt/fzf
 set cursorline
 " Required for operations modifying multiple buffers like rename.
