@@ -19,7 +19,7 @@ Plug 'YoEight/vim-one'
 " Plug 'jiangmiao/auto-pairs'
 " Plug 'shinchu/lightline-gruvbox.vim'
 Plug 'YoEight/haskell-vim'
-Plug 'rust-lang/rust.vim'
+Plug 'YoEight/rust.vim'
 Plug 'plasticboy/vim-markdown'
 Plug 'cespare/vim-toml'
 Plug 'tomtom/tlib_vim'
@@ -35,10 +35,10 @@ Plug 'MarcWeber/vim-addon-mw-utils'
 Plug 'garbas/vim-snipmate'
 Plug 'ntpeters/vim-better-whitespace'
 Plug 'Raimondi/delimitMate'
-Plug 'autozimu/LanguageClient-neovim', {
-    \ 'branch': 'next',
-    \ 'do': 'bash install.sh',
-    \ }
+" Plug 'autozimu/LanguageClient-neovim', {
+"     \ 'branch': 'next',
+"     \ 'do': 'bash install.sh',
+"     \ }
 
 source ~/.config/nvim/nvimrc.bepo
 
@@ -127,11 +127,11 @@ let g:haskell_backpack = 1                " to enable highlighting of backpack k
 let g:haskell_indent_case = 4
 let g:haskell_indent_disable = 1
 
-let g:LanguageClient_serverCommands = {
-    \ 'rust': ['rustup', 'run', 'nightly', 'rls'],
-    \ 'javascript': ['javascript-typescript-stdio'],
-    \ 'javascript.jsx': ['tcp://127.0.0.1:2089'],
-    \ }
+"let g:LanguageClient_serverCommands = {
+"    \ 'rust': ['rustup', 'run', 'nightly', 'rls'],
+"    \ 'javascript': ['javascript-typescript-stdio'],
+"    \ 'javascript.jsx': ['tcp://127.0.0.1:2089'],
+"    \ }
 " Useful remapping for third-party plugin.
 " noremap ,n :NERDTreeToggle<CR>
 
@@ -148,9 +148,9 @@ noremap ,gf :Files<CR>
 noremap ,gd :GFiles?<CR>
 noremap ,t :Tags<CR>
 
-nnoremap <silent> K :call LanguageClient#textDocument_hover()<CR>
-nnoremap <silent> gd :call LanguageClient#textDocument_definition()<CR>
-nnoremap <silent> <F2> :call LanguageClient#textDocument_rename()<CR>
+"nnoremap <silent> K :call LanguageClient#textDocument_hover()<CR>
+"nnoremap <silent> gd :call LanguageClient#textDocument_definition()<CR>
+"nnoremap <silent> <F2> :call LanguageClient#textDocument_rename()<CR>
 
 " Remapping <esc> in insert mode because it's really not practical on those touch bar macbook
 " pro.
