@@ -94,7 +94,7 @@ set hidden
 " let g:quantum_black=1
 let g:airline_theme='one'
 let g:airline_powerline_fonts = 1
-" let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#enabled = 1
 
 " let g:lightline = {
 "       \ 'colorscheme': 'gruvbox',

@@ -80,4 +80,17 @@ noremap wp <C-w>o
 noremap w<SPACE> :split<CR>
 noremap w<CR> :vsplit<CR>
 
-
+" Terminal mapping
+:tnoremap <S-Tab> <C-\><C-n>
+:tnoremap <A-c> <C-\><C-N><C-w>h
+:tnoremap <A-t> <C-\><C-N><C-w>j
+:tnoremap <A-s> <C-\><C-N><C-w>k
+:tnoremap <A-r> <C-\><C-N><C-w>l
+:inoremap <A-c> <C-\><C-N><C-w>h
+:inoremap <A-t> <C-\><C-N><C-w>j
+:inoremap <A-s> <C-\><C-N><C-w>k
+:inoremap <A-r> <C-\><C-N><C-w>l
+:nnoremap <A-c> <C-w>h
+:nnoremap <A-t> <C-w>j
+:nnoremap <A-s> <C-w>k
+:nnoremap <A-r> <C-w>l
